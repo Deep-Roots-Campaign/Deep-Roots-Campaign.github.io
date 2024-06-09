@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Page</title>
+    <style>
+        /* Style to adjust the width of the iframe */
+        #quote-frame {
+            width: 80%; /* Adjust the width as needed */
+            height: 500px;
+            border: none; /* Remove the border */
+        }
+    </style>
+</head>
+<body>
+    <iframe id="quote-frame" width="100%" height="500px" seamless></iframe>
+    <script>
+        async function getRandomQuotePage() {
+            try {
+                // Fetch the metadata file from the correct location
+                const response = await fetch('https://Deep-Roots-Campaign.github.io/lib/metadata.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const metadata = await response.json();
+
+                // Filter the list to only include files that begin with "Quotes/"
+                const quoteFiles = metadata.files.filter(file => file.startsWith('Quotes/'));
+
+                if (!quoteFiles.length) {
+                    throw new Error("No quote files found in the Quotes folder.");
+                }
+
+                // Randomly select a file from the filtered list
+                const randomIndex = Math.floor(Math.random() * quoteFiles.length);
+                let randomFile = quoteFiles[randomIndex];
+
+                // Change the file extension from ".md" to ".html"
+                randomFile = randomFile.replace(/\.md$/, ".html");
+
+                // Replace spaces with hyphens in the URL and convert to lowercase
+                const encodedUrl = `https://deep-roots-campaign.github.io/${randomFile.replace(/ /g, "-").toLowerCase()}`;
+
+                // Fetch the content of the quote page
+                const quoteResponse = await fetch(encodedUrl);
+                if (!quoteResponse.ok) {
+                    throw new Error('Failed to load quote page');
+                }
+                const quoteHtml = await quoteResponse.text();
+                
+                // Extract the content within the "node-insert-event" element
+                const parser = new DOMParser();
+                const quoteDoc = parser.parseFromString(quoteHtml, 'text/html');
+                const nodeInsertEventContent = quoteDoc.querySelector('.node-insert-event');
+                if (!nodeInsertEventContent) {
+                    throw new Error('node-insert-event element not found in quote page');
+                }
+
+                // Create a new HTML document within the iframe and set its body content to the extracted content
+                const quoteFrame = document.getElementById('quote-frame');
+                const iframeDoc = quoteFrame.contentDocument || quoteFrame.contentWindow.document;
+                iframeDoc.open();
+                iframeDoc.write(nodeInsertEventContent.innerHTML);
+                iframeDoc.close();
+            } catch (error) {
+                console.error("Error fetching or displaying the quote:", error);
+                document.getElementById('quote-frame').srcdoc = "Error loading quote.";
+            }
+        }
+
+        // Call the function to display a random quote page on load
+        getRandomQuotePage();
+    </script>
+</body>
+</html>
