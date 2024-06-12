@@ -8,12 +8,39 @@
     <link rel="stylesheet" href="lib/styles/theme.css">
     <link rel="stylesheet" href="lib/styles/global-variable-styles.css">
     <style>
-        /* Add custom styles if necessary */
+        /* Ensure minimal padding/margin for better fit in iframe */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .quote-container {
+            padding: 20px; /* Adjust as needed */
+        }
     </style>
 </head>
 <body class="theme-dark accent-color its-d">
-    <div id="quote-container">
-        <!-- The quote will be inserted here -->
+    <div class="quote-container">
+        <div class="">
+            <div class="">
+                <div class="">
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <div class="node-insert-event">
+                            <div data-callout-metadata="mark" data-callout-fold="" data-callout="quote" class="callout">
+                                <div class="callout-title">
+                                    <div class="callout-icon"></div>
+                                    <div class="callout-title-inner">
+                                        <span class="dataview dataview-inline-query"><span>SOURCE</span></span>, session <span class="dataview dataview-inline-query"><span>SESSION NUMBER</span></span>
+                                    </div>
+                                </div>
+                                <div class="callout-content">
+                                    <p>QUOTE TEXT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         async function getRandomQuotePage() {
@@ -62,11 +89,11 @@
                 </div>
                 `;
 
-                document.getElementById('quote-container').innerHTML = template;
+                document.querySelector('.quote-container').innerHTML = template;
 
             } catch (error) {
                 console.error('Error fetching or displaying the quote:', error);
-                document.getElementById('quote-container').innerHTML = 'Error loading quote.';
+                document.querySelector('.quote-container').innerHTML = 'Error loading quote.';
             }
         }
 
