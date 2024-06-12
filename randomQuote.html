@@ -3,69 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quote Page</title>
+    <title>Random Quote</title>
+    <link rel="stylesheet" href="lib/styles/obsidian.css">
+    <link rel="stylesheet" href="lib/styles/theme.css">
+    <link rel="stylesheet" href="lib/styles/global-variable-styles.css">
     <style>
-        /* Style to adjust the width of the iframe */
-        #quote-frame {
-            width: 80%; /* Adjust the width as needed */
-            height: 500px;
-            border: none; /* Remove the border */
-        }
+        /* Add custom styles if necessary */
     </style>
 </head>
-<body>
-    <iframe id="quote-frame" width="100%" height="500px" seamless></iframe>
+<body class="theme-dark accent-color its-d">
+    <div id="quote-container">
+        <!-- The quote will be inserted here -->
+    </div>
     <script>
         async function getRandomQuotePage() {
             try {
-                // Fetch the metadata file from the correct location
-                const response = await fetch('https://Deep-Roots-Campaign.github.io/lib/metadata.json');
+                const response = await fetch('https://deep-roots-campaign.github.io/lib/metadata.json');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const metadata = await response.json();
+                const quotes = metadata.files.filter(file => file.startsWith('Quotes/'));
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                const randomQuoteFile = quotes[randomIndex].replace('.md', '.html').toLowerCase().replace(/ /g, '-');
 
-                // Filter the list to only include files that begin with "Quotes/"
-                const quoteFiles = metadata.files.filter(file => file.startsWith('Quotes/'));
-
-                if (!quoteFiles.length) {
-                    throw new Error("No quote files found in the Quotes folder.");
-                }
-
-                // Randomly select a file from the filtered list
-                const randomIndex = Math.floor(Math.random() * quoteFiles.length);
-                let randomFile = quoteFiles[randomIndex];
-
-                // Change the file extension from ".md" to ".html"
-                randomFile = randomFile.replace(/\.md$/, ".html");
-
-                // Replace spaces with hyphens in the URL and convert to lowercase
-                const encodedUrl = `https://deep-roots-campaign.github.io/${randomFile.replace(/ /g, "-").toLowerCase()}`;
-
-                // Fetch the content of the quote page
-                const quoteResponse = await fetch(encodedUrl);
+                const quoteResponse = await fetch(`https://deep-roots-campaign.github.io/${randomQuoteFile}`);
                 if (!quoteResponse.ok) {
-                    throw new Error('Failed to load quote page');
+                    throw new Error('Network response was not ok');
                 }
                 const quoteHtml = await quoteResponse.text();
-                
-                // Extract the content within the "node-insert-event" element
                 const parser = new DOMParser();
-                const quoteDoc = parser.parseFromString(quoteHtml, 'text/html');
-                const nodeInsertEventContent = quoteDoc.querySelector('.node-insert-event');
-                if (!nodeInsertEventContent) {
-                    throw new Error('node-insert-event element not found in quote page');
-                }
+                const doc = parser.parseFromString(quoteHtml, 'text/html');
+                const quoteContent = doc.querySelector('.node-insert-event .callout-content p').textContent;
+                const source = doc.querySelector('.dataview-inline-query span').textContent;
+                const sessionNumber = doc.querySelectorAll('.dataview-inline-query span')[1].textContent;
 
-                // Create a new HTML document within the iframe and set its body content to the extracted content
-                const quoteFrame = document.getElementById('quote-frame');
-                const iframeDoc = quoteFrame.contentDocument || quoteFrame.contentWindow.document;
-                iframeDoc.open();
-                iframeDoc.write(nodeInsertEventContent.innerHTML);
-                iframeDoc.close();
+                const template = `
+                <div class="">
+                    <div class="">
+                        <div class="">
+                            <div class="markdown-preview-sizer markdown-preview-section">
+                                <div class="node-insert-event">
+                                    <div data-callout-metadata="mark" data-callout-fold="" data-callout="quote" class="callout">
+                                        <div class="callout-title">
+                                            <div class="callout-icon"></div>
+                                            <div class="callout-title-inner">
+                                                <span class="dataview dataview-inline-query"><span>${source}</span></span>, session <span class="dataview dataview-inline-query"><span>${sessionNumber}</span></span>
+                                            </div>
+                                        </div>
+                                        <div class="callout-content">
+                                            <p>${quoteContent}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+
+                document.getElementById('quote-container').innerHTML = template;
+
             } catch (error) {
-                console.error("Error fetching or displaying the quote:", error);
-                document.getElementById('quote-frame').srcdoc = "Error loading quote.";
+                console.error('Error fetching or displaying the quote:', error);
+                document.getElementById('quote-container').innerHTML = 'Error loading quote.';
             }
         }
 
