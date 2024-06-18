@@ -1,6 +1,6 @@
 {
   "vaultName": "Deep Roots",
-  "lastExport": 1718733174196,
+  "lastExport": 1718733941060,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-dark native-scrollbars show-inline-title show-ribbon file-explorer-flat background-image list-bullet-color list-lines-color check-color check-bg accent-color its-d",
   "useCustomHeadContent": false,
@@ -315,7 +315,7 @@
     "Images/Character Image Placeholder.jpeg",
     "Images/dataview-implicit-types.markdown",
     "Images/deidre diary.jpeg",
-    "Images/favicon.svg",
+    "Images/favicon.ico",
     "Images/height chart.png",
     "Images/New banner.png",
     "Images/Ralph.png",
@@ -404,8 +404,6 @@
     "NPC Directory.md",
     "Player Characters.md",
     "Session Logs.md",
-    "lib/media/geode_by_orangesavannah_on_deviantart.jpeg",
-    "lib/media/hallow.jpeg",
     "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
@@ -469,6 +467,8 @@
     "lib/media/zephyrqu_tabaxi_lion_magnificent_mane_metalic_brocade_robe_blue_95d41adb-bc36-4c7a-86e2-4572bd1b5e9f.png",
     "lib/media/zephyrqu_httpss.mj.run6_rusnocgca_httpss.mj.runs8e11epyr4g_elde_de6758cc-b896-4082-a389-1e06fb84a4cb.png",
     "lib/media/caspian.png",
+    "lib/media/geode_by_orangesavannah_on_deviantart.jpeg",
+    "lib/media/hallow.jpeg",
     "lib/media/alixandria.png",
     "lib/media/dasha.png",
     "lib/media/josiah.png",
@@ -3112,7 +3112,7 @@
       "dependencies": []
     },
     "Index.md": {
-      "modifiedTime": 1718728689462,
+      "modifiedTime": 1718733941060,
       "sourceSize": 916,
       "exportedPath": "index.html",
       "dependencies": [
@@ -3704,37 +3704,37 @@
       "dependencies": []
     },
     "images/new-banner.png": {
-      "modifiedTime": 1718728689462,
+      "modifiedTime": 1718733941060,
       "sourceSize": 1509037,
       "exportedPath": "images/new-banner.png",
       "dependencies": []
     },
     "images/creatures/aerendyl_.png": {
-      "modifiedTime": 1718728689462,
+      "modifiedTime": 1718733941060,
       "sourceSize": 3284893,
       "exportedPath": "images/creatures/aerendyl_.png",
       "dependencies": []
     },
     "images/creatures/corvaux1-card.png": {
-      "modifiedTime": 1718728689462,
+      "modifiedTime": 1718733941060,
       "sourceSize": 2762829,
       "exportedPath": "images/creatures/corvaux1-card.png",
       "dependencies": []
     },
     "images/creatures/mio.png": {
-      "modifiedTime": 1718728689462,
+      "modifiedTime": 1718733941060,
       "sourceSize": 910233,
       "exportedPath": "images/creatures/mio.png",
       "dependencies": []
     },
     "images/creatures/luck_of_the_draw.png": {
-      "modifiedTime": 1718728689462,
+      "modifiedTime": 1718733941060,
       "sourceSize": 961053,
       "exportedPath": "images/creatures/luck_of_the_draw.png",
       "dependencies": []
     },
     "images/creatures/mirri-card.png": {
-      "modifiedTime": 1718728689462,
+      "modifiedTime": 1718733941060,
       "sourceSize": 2493230,
       "exportedPath": "images/creatures/mirri-card.png",
       "dependencies": []
@@ -4016,189 +4016,183 @@
       "dependencies": []
     },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 23167,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 129920,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 2104,
       "exportedPath": "lib/styles/other-plugins.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 707573,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 312,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 206,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1718733174196,
+      "modifiedTime": 1718733941060,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
-      "dependencies": []
-    },
-    "Images/favicon.svg": {
-      "modifiedTime": 1718731759991,
-      "sourceSize": 2024729,
-      "exportedPath": "images/favicon.svg",
       "dependencies": []
     },
     "lib/media/geode_by_orangesavannah_on_deviantart.jpeg": {
@@ -4211,6 +4205,12 @@
       "modifiedTime": 1718733174196,
       "sourceSize": 1002816,
       "exportedPath": "lib/media/hallow.jpeg",
+      "dependencies": []
+    },
+    "Images/favicon.ico": {
+      "modifiedTime": 1718733941060,
+      "sourceSize": 2024729,
+      "exportedPath": "images/favicon.ico",
       "dependencies": []
     }
   }
