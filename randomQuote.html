@@ -8,70 +8,62 @@
     <link rel="stylesheet" href="lib/styles/theme.css">
     <link rel="stylesheet" href="lib/styles/global-variable-styles.css">
     <style>
+        /* Ensure minimal padding/margin for better fit in iframe */
         body {
             margin: 0;
             padding: 0;
         }
         .quote-container {
-            padding: 20px;
+            padding: 20px; /* Adjust as needed */
         }
     </style>
 </head>
 <body class="theme-dark accent-color its-d">
     <div class="quote-container">
-        Loading quote...
+        <div class="">
+            <div class="">
+                <div class="">
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <div class="node-insert-event">
+                            <div data-callout-metadata="mark" data-callout-fold="" data-callout="quote" class="callout">
+                                <div class="callout-title">
+                                    <div class="callout-icon"></div>
+                                    <div class="callout-title-inner">
+                                        <span class="dataview dataview-inline-query"><span>SOURCE</span></span>, session <span class="dataview dataview-inline-query"><span>SESSION NUMBER</span></span>
+                                    </div>
+                                </div>
+                                <div class="callout-content">
+                                    <p>QUOTE TEXT</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         async function getRandomQuotePage() {
             try {
-                console.log("Step 1: Fetching metadata...");
                 const response = await fetch('https://deep-roots-campaign.github.io/lib/metadata.json');
-                console.log("Step 2: Metadata fetch response:", response);
-                
                 if (!response.ok) {
-                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                    throw new Error('Network response was not ok');
                 }
-
                 const metadata = await response.json();
-                console.log("Step 3: Metadata fetched:", metadata);
-
-                if (!metadata.files || !Array.isArray(metadata.files)) {
-                    throw new Error("Invalid metadata structure: 'files' array not found.");
-                }
-
-                console.log("Step 4: Metadata files array:", metadata.files);
-
                 const quotes = metadata.files.filter(file => file.startsWith('Quotes/'));
-                console.log("Step 5: Filtered quotes:", quotes);
-
-                if (quotes.length === 0) {
-                    throw new Error("No quotes found in metadata.");
-                }
-
                 const randomIndex = Math.floor(Math.random() * quotes.length);
                 const randomQuoteFile = quotes[randomIndex].replace('.md', '.html').toLowerCase().replace(/ /g, '-');
-                console.log(`Step 6: Random quote file chosen: ${randomQuoteFile}`);
 
-                console.log(`Step 7: Fetching quote from file: ${randomQuoteFile}`);
                 const quoteResponse = await fetch(`https://deep-roots-campaign.github.io/${randomQuoteFile}`);
-                console.log("Step 8: Quote fetch response:", quoteResponse);
-
                 if (!quoteResponse.ok) {
-                    throw new Error(`Network response was not ok: ${quoteResponse.statusText}`);
+                    throw new Error('Network response was not ok');
                 }
-
                 const quoteHtml = await quoteResponse.text();
-                console.log("Step 9: Quote HTML fetched");
-
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(quoteHtml, 'text/html');
                 const quoteContent = doc.querySelector('.node-insert-event .callout-content p').textContent;
                 const source = doc.querySelector('.dataview-inline-query span').textContent;
                 const sessionNumber = doc.querySelectorAll('.dataview-inline-query span')[1].textContent;
-
-                console.log("Step 10: Parsed quote content:", quoteContent);
-                console.log("Step 11: Parsed source:", source);
-                console.log("Step 12: Parsed session number:", sessionNumber);
 
                 const template = `
                 <div class="">
@@ -106,7 +98,6 @@
         }
 
         // Call the function to display a random quote page on load
-        console.log("Calling getRandomQuotePage()");
         getRandomQuotePage();
     </script>
 </body>
